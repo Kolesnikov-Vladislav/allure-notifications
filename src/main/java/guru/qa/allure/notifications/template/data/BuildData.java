@@ -1,6 +1,7 @@
 package guru.qa.allure.notifications.template.data;
 
 import guru.qa.allure.notifications.config.base.Base;
+import guru.qa.allure.notifications.config.base.CustomString;
 import guru.qa.allure.notifications.formatters.Formatters;
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,7 +15,6 @@ import java.util.Map;
  */
 @Slf4j
 public class BuildData implements TemplateData {
-
     private final Base base;
 
     public BuildData(Base base) {
@@ -28,7 +28,23 @@ public class BuildData implements TemplateData {
         info.put("env", base.getEnvironment());
         info.put("comm", base.getComment());
         info.put("reportLink", Formatters.formatReportLink(base.getReportLink()));
+        Map<String, String> customStrings = processCustomStrings();
+        info.put("customStrings", customStrings);
+
         log.info("Build data: {}", info);
         return info;
     }
+
+    private Map<String, String> processCustomStrings() {
+        Map<String, String> customStrings = new HashMap<>();
+        if (base.getCustomStrings() != null) {
+            for (CustomString customString : base.getCustomStrings()) {
+                customStrings.put(customString.getKey(), customString.getValue());
+                log.info("Custom string added: key={}, value={}", customString.getKey(), customString.getValue());
+            }
+        }
+        return customStrings;
+    }
 }
+
+

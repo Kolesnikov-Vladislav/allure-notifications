@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import guru.qa.allure.notifications.config.enums.Language;
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @author kadehar
  * @since 4.0
@@ -15,6 +17,8 @@ public class Base {
     private String project;
     @SerializedName("environment")
     private String environment;
+    @SerializedName("customStrings")
+    private List<CustomString> customStrings;
     @SerializedName("comment")
     private String comment;
     @SerializedName("reportLink")

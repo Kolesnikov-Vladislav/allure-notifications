@@ -1,6 +1,11 @@
 <#compress>
     <b>${results}:</b>
     <b>${environment}: </b>${env}
+    <#if customStrings?has_content>
+        <#list customStrings as key, value>
+            <b>${key}:</b> ${value}
+        </#list>
+    </#if>
     <b>${comment}: </b>${comm}
     <b>${duration}: </b>${time}
     <b>${totalScenarios}: </b>${total}
@@ -9,5 +14,7 @@
     <#if broken != 0 ><b>${totalBroken}: </b>${broken}</#if>
     <#if unknown != 0 ><b>${totalUnknown}: </b>${unknown}</#if>
     <#if skipped != 0 ><b>${totalSkipped}: </b>${skipped}</#if>
+
+
     <#if reportLink??><b>${reportAvailableAtLink}:</b> <a href="${reportLink}">${reportLink}</a></#if>
 </#compress>

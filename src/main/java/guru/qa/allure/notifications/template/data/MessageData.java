@@ -34,9 +34,15 @@ public class MessageData {
         if (data == null) {
             this.data = new HashMap<>();
             log.info("Collecting template data");
+
             data.putAll(buildData.map());
             data.putAll(summaryData.map());
             data.putAll(phrasesData.map());
+
+            Map<String, String> customStrings = new HashMap<>((Map<String, String>) buildData.map().get("customStrings"));
+
+            data.put("customStrings", customStrings);
+
             log.info("Template data: {}", data);
         }
         return data;
