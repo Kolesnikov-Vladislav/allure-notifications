@@ -6,7 +6,6 @@
             <b>${key}:</b> ${value}
         </#list>
     </#if>
-    <b>${comment}: </b>${comm}
     <b>${duration}: </b>${time}
     <b>${totalScenarios}: </b>${total}
     <#if passed != 0 ><b>${totalPassed}: </b>${passed} (${passedPercentage} %)</#if>
