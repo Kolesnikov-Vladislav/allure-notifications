@@ -35,7 +35,7 @@ public class BuildData implements TemplateData {
         Map<String, String> customStrings = new HashMap<>();
         if (base.getCustomStrings() != null) {
             for (CustomString customString : base.getCustomStrings()) {
-                if (customString.getKey() == null) {
+                if (customString.getValue() == null) {
                     continue;
                 }
                 customStrings.put(customString.getKey(), customString.getValue());
