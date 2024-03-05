@@ -19,8 +19,6 @@ public class Base {
     private String environment;
     @SerializedName("customStrings")
     private List<CustomString> customStrings;
-    @SerializedName("comment")
-    private String comment;
     @SerializedName("reportLink")
     private String reportLink;
     @SerializedName("language")

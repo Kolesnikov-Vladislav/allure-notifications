@@ -26,7 +26,6 @@ public class PhrasesData implements TemplateData {
         Map<String, Object> info = new HashMap<>();
         info.put("results", phrases.getResults());
         info.put("environment", phrases.getEnvironment());
-        info.put("comment", phrases.getComment());
         info.put("reportAvailableAtLink", phrases.getReportAvailableAtLink());
         info.put("duration", phrases.getScenario().getDuration());
         info.put("totalScenarios", phrases.getScenario().getTotalScenarios());
