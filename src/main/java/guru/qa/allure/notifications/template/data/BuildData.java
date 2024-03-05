@@ -25,7 +25,9 @@ public class BuildData implements TemplateData {
     public Map<String, Object> map() {
         Map<String, Object> info = new HashMap<>();
         info.put("env", base.getEnvironment());
+        info.put("reportLinkAllureTestOps", Formatters.formatReportLink(base.getReportLinkAllureTestOps()));
         info.put("reportLink", Formatters.formatReportLink(base.getReportLink()));
+        info.put("mrLink", Formatters.formatReportLink(base.getMrLink()));
         Map<String, String> customStrings = processCustomStrings();
         info.put("customStrings", customStrings);
         return info;

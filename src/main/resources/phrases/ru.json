@@ -1,7 +1,9 @@
 {
   "results": "Результаты",
   "environment": "Рабочее окружение",
-  "reportAvailableAtLink": "Отчет доступен по ссылке",
+  "mrAvailableAtLink": "Ссылка на MR",
+  "reportAvailableAtLink": "Отчет AllureReport",
+  "reportAvailableAtLinkAllureTestOps": "Отчет AllureTestOps",
   "scenario": {
     "duration": "Продолжительность",
     "totalScenarios": "Всего сценариев",

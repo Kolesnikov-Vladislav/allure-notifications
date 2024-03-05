@@ -16,5 +16,8 @@
     <#if unknown != 0><b>${totalUnknown}: </b>${unknown}</#if>
     <#if skipped != 0><b>${totalSkipped}: </b>${skipped}</#if>
 
-    <#if reportLink??><b>${reportAvailableAtLink}:</b> <a href="${reportLink}">${reportLink}</a></#if>
+            <#if reportLink??><b>${reportAvailableAtLink}:</b> <a href="${reportLink}">${reportLink}</a></#if>
+            <#if reportLinkAllureTestOps??><b>${reportAvailableAtLinkAllureTestOps}:</b> <a href="${reportLinkAllureTestOps}">${reportLinkAllureTestOps}</a></#if>
+                <#if mrLink??><b>${mrAvailableAtLink}:</b> <a href="${mrLink}">${mrLink}</a></#if>
+
 </#compress>

@@ -21,6 +21,10 @@ public class Base {
     private List<CustomString> customStrings;
     @SerializedName("reportLink")
     private String reportLink;
+    @SerializedName("reportLinkAllureTestOps")
+    private String reportLinkAllureTestOps;
+    @SerializedName("mrLink")
+    private String mrLink;
     @SerializedName("language")
     private Language language;
     @SerializedName("logo")
