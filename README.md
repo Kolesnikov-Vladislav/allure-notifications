@@ -51,7 +51,7 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 ## Как выглядят оповещения
 Пример оповещения в Telegram
 
-<img width="333" alt="image" src="https://user-images.githubusercontent.com/109241600/213396660-c70adc4c-7a0f-4926-8d9d-473c6c433dd2.png">
+<img width="333" alt="image" src="readme_images/screen massage.png">
 
 <a name="Настройка">
 
@@ -154,6 +154,8 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 + `project`, `environment`, `comment` - имя проекта, название окружения и произвольный комментарий. 
 + `reportLink` - ссылка на Allure report с результатами прохождения автотестов (целесообразно заполнять при запуске 
   автотестов из Jenkins - об этом ниже).
++ `reportLinkAllureTestOps` - ссылка на отчет в ПО AllureTestOps (Необходим доступ)
++ `mrLink` -  ссылка на pipeline,  в рамках которого был осуществлен запуск авто-тестов.
 + `language` - язык, на котором будет сформирован текст для оповещения (варианты: en / fr / ru / ua / by / cn).
 + `allureFolder` - путь к папке с результатами работы Allure.
 + `enableChart` - требуется ли отображать диаграмму (варианты: true / false).
@@ -182,7 +184,7 @@ java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifica
 
 Заполнить следующим образом:
 
-<img width="745" alt="image" src="https://user-images.githubusercontent.com/109241600/213294133-164df8c0-85da-4059-97e7-3e4c8a386538.png">
+<img width="745" alt="image" src="readme_images/jenkins setting config allure-notifications.png">
 <img width="744" alt="image" src="https://user-images.githubusercontent.com/109241600/213294275-31a5efeb-d400-496d-b963-c6071f187e94.png">
 
 Примечание:
@@ -193,14 +195,6 @@ java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifica
 3. В разделе `Послесборочные операции` нажать кнопку `Добавить шаг после собрки`, в появившемся меню выбрать `Post build task`
 <img width="743" alt="image" src="https://user-images.githubusercontent.com/109241600/213299612-d28334c1-5dba-4e53-9f8d-32ef40b713ad.png">
 
-+ В поле `Script` указываем следующее:
-```
-cd ..
-FILE=allure-notifications-4.2.1.jar
-if [ ! -f "$FILE" ]; then
-   wget https://github.com/qa-guru/allure-notifications/releases/download/4.2.1/allure-notifications-4.2.1.jar
-fi
-```
 Примечание: 
 В этом скрипте мы переходим на папку выше, если там нет jar файла, то скачиваем его. Необходимо указать <a href="https://github.com/qa-guru/allure-notifications/releases" target="_blank">актуальную версию файла jar</a>
 
